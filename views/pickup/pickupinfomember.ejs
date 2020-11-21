@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-   <title>Member Profile </title>
+    <title>Pickup Information </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -28,61 +28,14 @@
   </head>
   <body>
     
-      <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-          <div class="container">
-           <a class="navbar-brand" href="#">Car Rent</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="oi oi-menu"></span> Menu
-      </button>
+      
 
-      <div class="collapse navbar-collapse" id="ftco-nav">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a href="/adminhome" class="nav-link">Home</a></li>
-
-             <li class="nav-item"><a href="admin/member" class="nav-link">Member</a></li>
-          
-          <li class="nav-item"><a href="admin/profile" class="nav-link">Profile</a></li>
-           <li class="nav-item">
-            <div class="bs-example">
-              <div class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Add Car</a>
-                <div class="dropdown-menu">
-                  <a href="../admin/privatecar" class="dropdown-item">Private Car</a>
-                   <a href="../admin/microbus" class="dropdown-item">Micro Bus</a>
-                    <a href="../admin/pickup" class="dropdown-item">Pick Up</a>
-                
-                </div>
-              </div>
-            </div>
-          </li>
-         
-          <li class="nav-item">
-            <div class="bs-example">
-              <div class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Others</a>
-                <div class="dropdown-menu">
-                  <a href="../admin/renthistory" class="dropdown-item">Rent History</a>
-                   <a href="../admin/blog" class="dropdown-item">Blog</a>
-                  
-
-                </div>
-              </div>
-            </div>
-          </li>
-         
-          <li class="nav-item"><a href="/logout" class="nav-link">Logout</a></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-   
-  <section class="ftco-section ftco-no-pb">
+     <section class="ftco-section ftco-no-pb">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-12 heading-section text-center ftco-animate mb-5">
             <span class="subheading"></span>
-            <h2 class="mb-2"> Member Information-- <%= user[0].username %>  </h2>
+            <h2 class="mb-2"> PickupInformation-- <%= pickup[0].pickupid %>  </h2>
           </div>
         </div>
       </div>
@@ -100,30 +53,30 @@
                                         
                                         <div class="row">
                                             <div class="col-sm-3 col-md-2 col-5">
-                                                <label style="font-weight:bold;">UserId</label>
+                                                <label style="font-weight:bold;">Pickup ID</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                <%= user[0].userid %>
+                                                <%= pickup[0].pickupid %>
                                             </div>
                                         </div>
                                         <hr />
 
                                         <div class="row">
                                             <div class="col-sm-3 col-md-2 col-5">
-                                                <label style="font-weight:bold;">UserName</label>
+                                                <label style="font-weight:bold;">Pickup Name</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                <%= user[0].username %>
+                                                <%= pickup[0].pickupname %>
                                             </div>
                                         </div>
                                         <hr />
 
                                         <div class="row">
                                             <div class="col-sm-3 col-md-2 col-5">
-                                                <label style="font-weight:bold;">Email</label>
+                                                <label style="font-weight:bold;">Pickup Cost</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                 <%= user[0].email %>
+                                                 <%= pickup[0].pickupcost %>
                                             </div>
                                         </div>
                                         <hr />
@@ -131,32 +84,16 @@
                                         
                                         <div class="row">
                                             <div class="col-sm-3 col-md-2 col-5">
-                                                <label style="font-weight:bold;">Phone</label>
+                                                <label style="font-weight:bold;"> Available Pickup Car</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                 <%= user[0].phone %>
+                                                 <%= pickup[0].avlcar %>
                                             </div>
                                         </div>
                                         <hr />
-                                        <div class="row">
-                                            <div class="col-sm-3 col-md-2 col-5">
-                                                <label style="font-weight:bold;">Gender</label>
-                                            </div>
-                                            <div class="col-md-8 col-6">
-                                                 <%= user[0].gender %>
-                                            </div>
-                                        </div>
-                                        <hr />
-                                        <div class="row">
-                                            <div class="col-sm-3 col-md-2 col-5">
-                                                <label style="font-weight:bold;">city</label>
-                                            </div>
-                                            <div class="col-md-8 col-6">
-                                                <%= user[0].city %>
-                                            </div>
-                                        </div>
-                                        <hr />
-                                       
+
+
+                                      
                                     </div>
                                    
                                 </div>
@@ -164,17 +101,15 @@
                         </div>
 
 
-                    
+      <div class="col-md-6">
+     
+      <a href="../addpickup/addpickup/bookpickup/<%= pickup[0].pickupid %>" class="list-group-item list-group-item-action"><h4>Add Car</h4> <br> </a>    
+      </div>              
     
 
    
    
-    <div class="col-md-6">
-      <a href="../../admin/memberupdate/<%= user[0].userid %>" class="list-group-item list-group-item-action"><h4>Update</h4> </a>
-      
-      <a href="../../admin/memberdelete/<%= user[0].userid %>" class="list-group-item list-group-item-action"><h4>Delete</h4> <br> </a>
-     
-</div>
+   
 </div>
 </div>
 

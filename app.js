@@ -9,6 +9,9 @@ var memberhome = require('./controllers/memberhome');
 var admin = require('./controllers/admin');
 var member = require('./controllers/member');
 var register = require('./controllers/register');
+var addprivatecar = require('./controllers/addprivatecar');
+var addmicro = require('./controllers/addmicro');
+var addpickup= require('./controllers/addpickup');
 
 var logout = require('./controllers/logout');
 
@@ -31,6 +34,9 @@ app.use('/admin', admin);
 app.use('/member', member);
 app.use('/register', register);
 app.use('/logout', logout);
+app.use('/addprivatecar', addprivatecar);
+app.use('/addmicro', addmicro);
+app.use('/addpickup', addpickup);
 
 app.use(express.static(path.join(__dirname, 'public')));
 

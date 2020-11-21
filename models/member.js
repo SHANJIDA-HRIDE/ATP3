@@ -40,6 +40,45 @@ module.exports={
 			callback(status);
 		});
 	},
+
+	getprivatecar: function(callback){
+		var sql = "select * from privatecar  ";
+
+		db.getResults(sql, function(results){
+
+			if(results.length > 0 ) {
+				callback(results);
+			}else{
+				callback([]);
+			}
+		});
+	},
+
+	getmicro: function(callback){
+		var sql = "select * from micro  ";
+
+		db.getResults(sql, function(results){
+
+			if(results.length > 0 ) {
+				callback(results);
+			}else{
+				callback([]);
+			}
+		});
+	},
+
+	getpickup: function(callback){
+		var sql = "select * from pickup  ";
+
+		db.getResults(sql, function(results){
+
+			if(results.length > 0 ) {
+				callback(results);
+			}else{
+				callback([]);
+			}
+		});
+	},
 				
 
 }

@@ -103,6 +103,34 @@ router.get('/memberdelete/:id', function(req, res){
 	});
 });
 
+router.get('/privatecar', function(req, res){
+
+		userModel.getprivatecar(function(results){
+			
+				res.render('privatecar/privatecarview', {privatecar: results});
+			
+		});
+});
+
+
+router.get('/microbus', function(req, res){
+
+		userModel.getmicro(function(results){
+			
+				res.render('micro/microview', {micro: results});
+			
+		});
+});
+
+router.get('/pickup', function(req, res){
+
+		userModel.getpickup(function(results){
+			
+				res.render('pickup/pickupview', {pickup: results});
+			
+		});
+});
+
 
 
 module.exports = router;

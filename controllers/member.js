@@ -44,6 +44,32 @@ router.post('/memberupdate/:id', function(req, res){
 		}
 	});
 });
+router.get('/privatecar', function(req, res){
+
+		userModel.getprivatecar(function(results){
+			
+				res.render('privatecar/privatecarviewmember', {privatecar: results});
+			
+		});
+});
+
+router.get('/microbus', function(req, res){
+
+		userModel.getmicro(function(results){
+			
+				res.render('micro/microviewmember', {micro: results});
+			
+		});
+});
+
+router.get('/pickup', function(req, res){
+
+		userModel.getpickup(function(results){
+			
+				res.render('pickup/pickupviewmember', {pickup: results});
+			
+		});
+});
 
 
 module.exports = router;

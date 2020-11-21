@@ -20,7 +20,7 @@ router.post('/adminreg', function(req, res){
 		password: req.body.password,
 		gender: req.body.gender,
 		city: req.body.city
-		type: req.body.type
+	
 		
 	}
 	
@@ -48,7 +48,7 @@ router.post('/memberreg', function(req, res){
 		password: req.body.password,
 		gender: req.body.gender,
 		city: req.body.city
-		type: req.body.type
+		
 	}
 	
 

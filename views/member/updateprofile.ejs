@@ -31,39 +31,54 @@
       <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
           <div class="container">
            <a class="navbar-brand" href="#">Car Rent</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-              aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="oi oi-menu"></span> Menu
-            </button>
-      
-            <div class="collapse navbar-collapse" id="ftco-nav">
-              <ul class="navbar-nav ml-auto">
-                  <li class="nav-item active"><a href="/memberhome" class="nav-link">Home</a></li>
-               
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
+
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active"><a href="/adminhome" class="nav-link">Home</a></li>
+
+             <li class="nav-item"><a href="admin/member" class="nav-link">Member</a></li>
           
-          <li class="nav-item"><a href="member/memberprofile" class="nav-link">Profile</a></li>
-         
-          <li class="nav-item">
+          <li class="nav-item"><a href="admin/profile" class="nav-link">Profile</a></li>
+           <li class="nav-item">
             <div class="bs-example">
               <div class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Others</a>
-               <div class="dropdown-menu">
-                  <a href="../member/privatecar" class="dropdown-item">Private Car</a>
-                   <a href="../member/microbus" class="dropdown-item">Micro Bus</a>
-                    <a href="../member/pickup" class="dropdown-item">Pick Up</a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Add Car</a>
+                <div class="dropdown-menu">
+                  <a href="../admin/privatecar" class="dropdown-item">Private Car</a>
+                   <a href="../admin/microbus" class="dropdown-item">Micro Bus</a>
+                    <a href="../admin/pickup" class="dropdown-item">Pick Up</a>
                 
                 </div>
               </div>
             </div>
           </li>
+
+            <li class="nav-item">
+            <div class="bs-example">
+              <div class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Others</a>
+                <div class="dropdown-menu">
+                  <a href="../admin/renthistory" class="dropdown-item">Rent History</a>
+                   <a href="../admin/blog" class="dropdown-item">Blog</a>
+                  
+
+                </div>
+              </div>
+            </div>
+          </li>
+         
+          
          
           <li class="nav-item"><a href="/logout" class="nav-link">Logout</a></li>
-      
-              </ul>
-            </div>
-          </div>
-        </nav>
-    <!-- END nav -->
+
+        </ul>
+      </div>
+    </div>
+  </nav>
     
    
 

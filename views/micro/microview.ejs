@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-   <title>Member Profile </title>
+    <title>Micro car</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -28,76 +28,30 @@
   </head>
   <body>
     
-      <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-          <div class="container">
-           <a class="navbar-brand" href="#">Car Rent</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="oi oi-menu"></span> Menu
-      </button>
-
-      <div class="collapse navbar-collapse" id="ftco-nav">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a href="/adminhome" class="nav-link">Home</a></li>
-
-             <li class="nav-item"><a href="admin/member" class="nav-link">Member</a></li>
-          
-          <li class="nav-item"><a href="admin/profile" class="nav-link">Profile</a></li>
-           <li class="nav-item">
-            <div class="bs-example">
-              <div class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Add Car</a>
-                <div class="dropdown-menu">
-                  <a href="../admin/privatecar" class="dropdown-item">Private Car</a>
-                   <a href="../admin/microbus" class="dropdown-item">Micro Bus</a>
-                    <a href="../admin/pickup" class="dropdown-item">Pick Up</a>
-                
-                </div>
-              </div>
-            </div>
-          </li>
-         
-          <li class="nav-item">
-            <div class="bs-example">
-              <div class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Others</a>
-                <div class="dropdown-menu">
-                  <a href="../admin/renthistory" class="dropdown-item">Rent History</a>
-                   <a href="../admin/blog" class="dropdown-item">Blog</a>
-                  
-
-                </div>
-              </div>
-            </div>
-          </li>
-         
-          <li class="nav-item"><a href="/logout" class="nav-link">Logout</a></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-    
      
-
  <section class="ftco-section ftco-no-pb">
-
+   <div class="col-md-3">
+      
+      <a href="../../addmicro/micro/" class="list-group-item list-group-item-action"><h4>Add Micro</h4> <br> </a>
+</div>
+  
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-12 heading-section text-center ftco-animate mb-5">
             <span class="subheading"></span>
-            <h2 class="mb-2">Member List </h2>
+            <h2 class="mb-2">Micro Car List </h2>
           </div>
 
         </div>
       </div>
-    
+     
     </section>
 
 
    <div class="list-group " align="center" >
     <div class="col-md-12 heading-section text-center ftco-animate mb-5">
-    <% for(var i=0; i< user.length; i++){ %>
- <a href="../admin/memberinfo/<%= user[i].userid %>" class="list-group-item list-group-item-action"><h4><%= user[i].username %></h4> <br> </a>
+    <% for(var i=0; i< micro.length; i++){ %>
+ <a href="../addmicro/microinfo/<%= micro[i].microid %>" class="list-group-item list-group-item-action"><h4><%= micro[i].microname %></h4> <br> </a>
  <% } %>
 </div>
 </div>
