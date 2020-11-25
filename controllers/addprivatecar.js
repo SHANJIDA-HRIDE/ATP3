@@ -109,15 +109,17 @@ router.get('/addprivatecar/addprivatecar/privatebook/:id', function(req, res){
 
 router.post('/addprivatecar/addprivatecar/privatebook/:id', function(req, res){
 	
-	var boooking = {
-		location: req.body.location,
-		time: req.body.time,
+	var boookpri = {
+
+
+		address: req.body.location,
+		date: req.body.time,
 		
 		
 		
 		id: req.params.id
 	};
-	booking.insert(boooking, function(status){
+	booking.insert(boookpri, function(status){
 		console.log(status);
 		if(status){
 			res.redirect('/member/privatecar');
@@ -125,6 +127,16 @@ router.post('/addprivatecar/addprivatecar/privatebook/:id', function(req, res){
 			res.redirect('/memberhome');
 		}
 	});
+});
+
+
+router.get('/privatecarinfo/:id', function(req, res){
+
+	userModel.getByIdprivatecar(req.params.id, function(results){
+
+		res.render('privatecar/privatecarinfo', {privatecar: results});		
+	});
+
 });
 
 

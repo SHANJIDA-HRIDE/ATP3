@@ -8,7 +8,7 @@ getByIdprivate: function(id, callback){
         db.getResults(sql, function(result){
 
             if(result.length > 0 ){
-               // console.log(result[0].spid);
+           
                 callback(result);
             }else{
                 callback([]);
@@ -16,13 +16,50 @@ getByIdprivate: function(id, callback){
         });
     },
 
-    insert: function(boooking, callback){
-	    var sql = "insert into boooking values('','"+boooking.userid+"', '"+boooking.location+"', '"+boooking.time+"');";
+    getByIdmicro: function(id, callback){
+
+        var sql = "select * from micro where microid="+id;
+        db.getResults(sql, function(result){
+
+            if(result.length > 0 ){
+              ;
+                callback(result);
+            }else{
+                callback([]);
+            }
+        });
+    },
+
+    insertmic: function(bookmic, callback){
+	    var sql = "insert into bookmic values('','"+bookmic.userid+"', '"+bookmic.address+"', '"+bookmic.date+"');";
 		db.execute(sql, function(status){
 			callback(status);
 			
 		});
 	},
+
+     getByIdpickup: function(id, callback){
+
+        var sql = "select * from pickup where pickupid="+id;
+        db.getResults(sql, function(result){
+
+            if(result.length > 0 ){
+              ;
+                callback(result);
+            }else{
+                callback([]);
+            }
+        });
+    },
+
+    insertpickup: function(bookpick, callback){
+        var sql = "insert into bookpick values('','"+bookpick.userid+"', '"+bookpick.address+"', '"+bookpick.date+"');";
+        db.execute(sql, function(status){
+            callback(status);
+            
+        });
+    },
+
 
 
  }

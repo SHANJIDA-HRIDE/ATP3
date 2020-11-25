@@ -71,5 +71,14 @@ router.get('/pickup', function(req, res){
 		});
 });
 
+router.get('/renthistory', function(req, res){
+
+		userModel.getrenthistory(function(results){
+			
+				res.render('history/historyinfo', {history: results});
+			
+		});
+});
+
 
 module.exports = router;

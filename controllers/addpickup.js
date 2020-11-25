@@ -1,6 +1,7 @@
 var express = require('express');
 var db = require('./../models/db.js');
 var userModel = require('./../models/admin');
+var booking = require('./../models/booking');
 
 var router = express.Router();
 
@@ -84,6 +85,45 @@ router.post('/pickup', (req, res)=>{
 		}
 	});
 });
+
+router.get('/addpickup/addpickup/bookpickup/:id', function(req, res){
+
+	booking.getByIdpickup(req.params.id, function(status){
+		if(status)
+        {
+        	 res.render('booking/book');	
+            
+        }
+        else{
+        	res.redirect('/adminhome');
+        }
+		   		
+	});
+
+});
+
+router.post('/addpickup/addpickup/bookpickup/:id', function(req, res){
+	
+	var bookpick = {
+
+
+		address: req.body.location,
+		date: req.body.time,
+		
+		
+		
+		id: req.params.id
+	};
+	booking.insertpickup(bookpick, function(status){
+		console.log(status);
+		if(status){
+			res.redirect('/member/pickup');
+		}else{
+			res.redirect('/memberhome');
+		}
+	});
+});
+
 
 
 

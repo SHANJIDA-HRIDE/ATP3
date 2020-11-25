@@ -1,6 +1,7 @@
 var express = require('express');
 var db = require('./../models/db.js');
 var userModel = require('./../models/admin');
+var booking = require('./../models/booking');
 
 
 
@@ -88,6 +89,52 @@ router.post('/micro', (req, res)=>{
 		}
 	});
 });
+
+router.get('/addmicro/addmicro/microbook/:id', function(req, res){
+
+	booking.getByIdmicro(req.params.id, function(status){
+		if(status)
+        {
+        	 res.render('booking/book');	
+            
+        }
+        else{
+        	res.redirect('/adminhome');
+        }
+		   		
+	});
+
+});
+
+router.post('/addmicro/addmicro/microbook/:id', function(req, res){
+	
+	var bookmic = {
+		location: req.body.location,
+		time: req.body.time,
+		
+		
+		
+		id: req.params.id
+	};
+	booking.insertmic(bookmic, function(status){
+		console.log(status);
+		if(status){
+			res.redirect('/member/micro');
+		}else{
+			res.redirect('/memberhome');
+		}
+	});
+});
+
+router.get('/microinfo/:id', function(req, res){
+
+	userModel.getByIdmicro(req.params.id, function(results){
+
+		res.render('micro/microinfo', {micro: results});		
+	});
+
+});
+
 
 
 

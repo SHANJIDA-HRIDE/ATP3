@@ -67,8 +67,8 @@ module.exports={
 		});
 	},
 
-	getpickup: function(callback){
-		var sql = "select * from pickup  ";
+	getrenthistory: function(callback){
+		var sql = "select * from history  ";
 
 		db.getResults(sql, function(results){
 

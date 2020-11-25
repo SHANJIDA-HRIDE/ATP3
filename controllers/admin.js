@@ -1,6 +1,7 @@
 var express = require('express');
 
 var userModel = require('./../models/admin');
+var userModel = require('./../models/member');
 
 
 
@@ -127,6 +128,15 @@ router.get('/pickup', function(req, res){
 		userModel.getpickup(function(results){
 			
 				res.render('pickup/pickupview', {pickup: results});
+			
+		});
+});
+
+router.get('/renthistory', function(req, res){
+
+		userModel.getrenthistory(function(results){
+			
+				res.render('history/historyinfo', {history: results});
 			
 		});
 });
